@@ -156,17 +156,16 @@ func checkAndQuote(op, value string) string {
 	return value
 }
 
-func dateValidator(date string) (string, error) {
+func dateValidator(s string) error {
 	// get all regex matches for date
-	m := dre.FindString(date)
+	m := dre.FindString(s)
 	if len(m) == 0 {
-		return "", fmt.Errorf("invalid date")
+		return fmt.Errorf("error in validating date %s", s)
 	}
 	// grab valid date and parse to time object
 	_, err := now.Parse(m)
 	if err != nil {
-		return "could not parse date string", err
+		return fmt.Errorf("could not parse date %s %s", s, err)
 	}
-	// if date is valid, return the original string since it matches AQL input format
-	return m, nil
+	return nil
 }
