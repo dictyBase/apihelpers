@@ -111,9 +111,8 @@ func GenAQLFilterStatement(fmap map[string]string, filters []*Filter) (string, e
 		// check if operator is for a date
 		if _, ok := dmap[f.Operator]; ok {
 			// validate date format
-			d, err := dateValidator(f.Value)
-			if err != nil {
-				return "could not convert date", err
+			if err := dateValidator(f.Value); err != nil {
+				return "", err
 			}
 			// write time conversion into AQL query
 			clause.WriteString(
@@ -121,7 +120,7 @@ func GenAQLFilterStatement(fmap map[string]string, filters []*Filter) (string, e
 					"%s %s DATE_ISO8601('%s')",
 					fmap[f.Field],
 					omap[f.Operator],
-					d,
+					f.Value,
 				),
 			)
 			// if there's logic, write that too
@@ -163,8 +162,7 @@ func dateValidator(s string) error {
 		return fmt.Errorf("error in validating date %s", s)
 	}
 	// grab valid date and parse to time object
-	_, err := now.Parse(m)
-	if err != nil {
+	if _, err := now.Parse(m); err != nil {
 		return fmt.Errorf("could not parse date %s %s", s, err)
 	}
 	return nil
