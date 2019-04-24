@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"gopkg.in/mgutz/dat.v2/dat"
-	"gopkg.in/mgutz/dat.v2/sqlx-runner"
+	runner "gopkg.in/mgutz/dat.v2/sqlx-runner"
 
 	"github.com/dictyBase/go-genproto/dictybaseapis/api/jsonapi"
 	"github.com/fatih/structs"
