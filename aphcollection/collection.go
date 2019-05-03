@@ -2,6 +2,17 @@
 //slices
 package aphcollection
 
+// Remove removes items from the given(a) slice
+func Remove(a []string, items ...string) []string {
+	var s []string
+	for _, v := range items {
+		if !Contains(a, v) {
+			s = append(s, v)
+		}
+	}
+	return s
+}
+
 // Index returns the index of the first instance of s in slice a, or -1 if s is
 // not present in a
 func Index(a []string, s string) int {
