@@ -5,8 +5,8 @@ package aphcollection
 // Remove removes items from the given(a) slice
 func Remove(a []string, items ...string) []string {
 	var s []string
-	for _, v := range items {
-		if !Contains(a, v) {
+	for _, v := range a {
+		if !Contains(items, v) {
 			s = append(s, v)
 		}
 	}
