@@ -1,7 +1,7 @@
 package flag
 
 import (
-	cli "gopkg.in/urfave/cli.v1"
+	"github.com/urfave/cli"
 )
 
 // NatsFlag returns a cli.Flag slice for using in the command

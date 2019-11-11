@@ -58,6 +58,7 @@ require (
 	github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a // indirect
 	github.com/spacemonkeygo/errors v0.0.0-20171212215202-9064522e9fd1
 	github.com/stretchr/testify v1.3.1-0.20190311161405-34c6fa2dc709
+	github.com/urfave/cli v1.22.1
 	github.com/valyala/fasttemplate v1.0.1 // indirect
 	golang.org/x/net v0.0.0-20190514140710-3ec191127204
 	google.golang.org/genproto v0.0.0-20190516172635-bb713bdc0e52
@@ -67,5 +68,4 @@ require (
 	gopkg.in/ini.v1 v1.42.0 // indirect
 	gopkg.in/mgutz/dat.v2 v2.0.0-20171004160617-d76e4f81c4ef
 	gopkg.in/src-d/go-git.v4 v4.11.0
-	gopkg.in/urfave/cli.v1 v1.20.0
 )
