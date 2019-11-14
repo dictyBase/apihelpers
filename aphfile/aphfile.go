@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	minio "github.com/minio/minio-go"
+	"github.com/minio/minio-go/v6"
 )
 
 func FetchRemoteFile(s3Client *minio.Client, bucket, path string) (io.Reader, error) {
