@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"strings"
 
-	"github.com/gocraft/dbr"
+	"github.com/gocraft/dbr/v2"
 )
 
 // Resource is the interface that every http handler have to implement
