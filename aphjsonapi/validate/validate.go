@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"gopkg.in/go-playground/validator.v9"
+	"github.com/go-playground/validator/v10"
 
 	"github.com/dictyBase/apihelpers/aphcollection"
 	jsapi "github.com/dictyBase/apihelpers/aphjsonapi"
